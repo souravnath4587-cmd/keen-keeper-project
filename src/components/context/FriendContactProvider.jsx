@@ -3,30 +3,42 @@ import React, { createContext, useState } from "react";
 export const FriendContactContext = createContext();
 
 const FriendContactProvider = ({ children }) => {
-  const [friendCallContact, setFriendCallContact] = useState([]);
-
-  const handleCall = (person) => {
+  const [friendContact, setFriendContact] = useState([]);
+  // const [friendTextContact, setFriendTextContact] = useState([]);
+  // const [friendVideoContact, setFriendVideoContact] = useState([]);
+  const timeGap = 5 * 60 * 1000; // 5 minutes
+  const handleAction = (person, type) => {
     const date = new Date();
-    // console.log("Call Button is clicked....", person.name, date.toDateString());
+    // const lastAction = friendContact.find((item) => item.id === person.id);
+    // console.log(lastAction);
 
-    const isPersonExist = friendCallContact.find((con) => con.id == person.id);
+    // if (lastAction) {
+    //   const lastTime = new Date(lastAction.fullTime);
+    //   const diff = date - lastTime;
+    //   console.log(diff);
 
-    if (isPersonExist) {
-      alert("I already contact with this person....");
-    } else {
-      const updatePerson = {
-        ...person,
-        last_contact_date: date.toDateString(),
-      };
-      setFriendCallContact([...friendCallContact, updatePerson]);
-    }
-    console.log(friendCallContact);
+    //   if (diff < timeGap) {
+    //     alert("⏳ Please wait at least 5 minutes!");
+    //     return;
+    //   }
+    // }
+
+    const updatePerson = {
+      ...person,
+      last_contact_time: date.toLocaleTimeString(),
+      last_contact_date: date.toDateString(),
+      action: type,
+      // fullTime: date,
+    };
+    setFriendContact([...friendContact, updatePerson]);
+
+    console.log(friendContact);
   };
 
   const data = {
-    handleCall,
-    friendCallContact,
-    setFriendCallContact,
+    handleAction,
+    friendContact,
+    setFriendContact,
   };
   return (
     <FriendContactContext.Provider value={data}>

@@ -5,7 +5,7 @@ import { IoMdText } from "react-icons/io";
 import { FriendContactContext } from "../context/FriendContactProvider";
 
 const RightCard = ({ expectedFriend }) => {
-  const { handleCall } = useContext(FriendContactContext);
+  const { handleAction } = useContext(FriendContactContext);
 
   const { days_since_contact, goal, next_due_date } = expectedFriend;
   return (
@@ -39,17 +39,23 @@ const RightCard = ({ expectedFriend }) => {
         <h4 className="text-xl text-[#244d3f] my-4">Quick Check In</h4>
         <div className="flex flex-row justify-between items-center gap-2">
           <div
-            onClick={() => handleCall(expectedFriend)}
+            onClick={() => handleAction(expectedFriend, "call")}
             className="bg-[#f5f3f7] rounded-xl px-12 py-6 flex flex-col items-center space-y-2"
           >
             <BsFillTelephoneFill size={25} />
             <p className="text-[#64748b]">Call</p>
           </div>
-          <div className="bg-[#f5f3f7] rounded-xl px-12 py-6 flex flex-col items-center space-y-2">
+          <div
+            onClick={() => handleAction(expectedFriend, "text")}
+            className="bg-[#f5f3f7] rounded-xl px-12 py-6 flex flex-col items-center space-y-2"
+          >
             <IoMdText size={25} />
             <p className="text-[#64748b]">Text</p>
           </div>
-          <div className="bg-[#f5f3f7] rounded-xl px-12 py-6  flex flex-col items-center space-y-2">
+          <div
+            onClick={() => handleAction(expectedFriend, "video")}
+            className="bg-[#f5f3f7] rounded-xl px-12 py-6  flex flex-col items-center space-y-2"
+          >
             <FaVideo size={25} />
             <p className="text-[#64748b]">Video</p>
           </div>
