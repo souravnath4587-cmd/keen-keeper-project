@@ -6,7 +6,7 @@ const Friend = ({ friend }) => {
 
   return (
     <Link to={`/friendDetails/${friend.id}`}>
-      <div className=" rounded-2xl p-8 shadow-xl flex flex-col justify-center items-center">
+      <div className=" rounded-xl bg-white p-8 shadow-xl flex flex-col justify-center items-center">
         <div className="w-24 rounded-full  overflow-hidden">
           <img src={picture} alt="" />
         </div>
