@@ -44,7 +44,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="cbg-base-100 shadow-sm">
+    <div className="bg-base-100 shadow-sm fixed w-full top-0 ">
       <div className="navbar container mx-auto ">
         <div className="flex-1">
           <Link className="btn btn-ghost text-xl" to="/">

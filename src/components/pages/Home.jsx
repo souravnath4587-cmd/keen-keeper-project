@@ -8,7 +8,7 @@ const Home = () => {
   const friends = use(friendsData);
   return (
     <div className="">
-      <div className="container mx-auto bg-[#f7f5f8ec]">
+      <div className="container mx-auto bg-[#f7f5f8ec] p-4 my-4">
         <Banner />
         <Tab friends={friends} />
         <Friends friends={friends} />
