@@ -33,7 +33,7 @@ const Stars = () => {
       {friendContact.length === 0 ? (
         <EmptyPage></EmptyPage>
       ) : (
-        <div className="container mx-auto bg-[#f7f5f8ec] p-4  mt-4">
+        <div className="container mx-auto bg-[#f7f5f8ec] p-4  mt-20">
           {/* Title */}
           <h2 className="text-4xl font-bold py-6 mt-4">Friendship Analytics</h2>
 
@@ -61,7 +61,7 @@ const Stars = () => {
             </PieChart>
             ;
           </div>
-          {/* <CustomLigend /> */}
+          <CustomLigend />
         </div>
       )}
     </div>

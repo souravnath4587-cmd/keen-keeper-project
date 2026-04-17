@@ -14,7 +14,7 @@ const Timeline = () => {
       {filterList.length === 0 ? (
         <EmptyPage></EmptyPage>
       ) : (
-        <div className="container mx-auto bg-[#f7f5f8ec] p-4 my-4">
+        <div className="container mx-auto bg-[#f7f5f8ec] p-4 mt-20">
           <h2 className="text-4xl font-bold py-6 mt-4">TimeLine</h2>
           <DropDown />
           {filterList.map((item) => (

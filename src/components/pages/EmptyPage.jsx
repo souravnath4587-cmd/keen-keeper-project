@@ -3,7 +3,7 @@ import React from "react";
 const EmptyPage = () => {
   return (
     <div>
-      <div className="flex flex-col items-center justify-center py-16 text-center">
+      <div className="flex flex-col items-center justify-center py-16 text-center h-screen">
         {/* Icon */}
         <div className="text-5xl mb-4">📭</div>
 
