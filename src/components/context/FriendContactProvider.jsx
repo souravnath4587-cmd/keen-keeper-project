@@ -23,8 +23,6 @@ const FriendContactProvider = ({ children }) => {
     };
     toast.success(`${type} with ${person.name}`);
     setFriendContact([...friendContact, updatePerson]);
-
-    console.log(friendContact);
   };
 
   const data = {
