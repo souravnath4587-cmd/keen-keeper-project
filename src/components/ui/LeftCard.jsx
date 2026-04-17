@@ -27,18 +27,18 @@ const LeftCard = ({ expectedFriend }) => {
           </div>
         </div>
       </div>
-      <div className="rounded-xl p-2 shadow flex flex-row gap-2 justify-center items-center  my-4">
+      <button className="rounded-xl btn p-2 w-full shadow flex flex-row gap-2 justify-center items-center  my-4">
         <RiNotificationSnoozeFill />
         Snooze 2 Weeks
-      </div>
-      <div className="rounded-xl p-2 shadow flex flex-row gap-2 justify-center items-center  mb-4">
+      </button>
+      <button className="rounded-xl btn w-full p-2 shadow flex flex-row gap-2 justify-center items-center  mb-4">
         <FaArchive />
         Archive
-      </div>
-      <div className="rounded-xl p-2 shadow flex flex-row gap-2 justify-center items-center  text-red-400">
+      </button>
+      <button className="rounded-xl btn w-full p-2 shadow flex flex-row gap-2 justify-center items-center  text-red-400">
         <MdDelete />
         Delete
-      </div>
+      </button>
     </div>
   );
 };
