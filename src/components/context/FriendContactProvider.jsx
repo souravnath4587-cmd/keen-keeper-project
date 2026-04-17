@@ -1,4 +1,5 @@
 import React, { createContext, useState } from "react";
+import { toast } from "react-toastify";
 
 export const FriendContactContext = createContext();
 
@@ -11,31 +12,16 @@ const FriendContactProvider = ({ children }) => {
       ? friendContact
       : friendContact.filter((item) => item.action === filterActive);
 
-  // const timeGap = 5 * 60 * 1000; // 5 minutes
-
   const handleAction = (person, type) => {
     const date = new Date();
-    // const lastAction = friendContact.find((item) => item.id === person.id);
-    // console.log(lastAction);
-
-    // if (lastAction) {
-    //   const lastTime = new Date(lastAction.fullTime);
-    //   const diff = date - lastTime;
-    //   console.log(diff);
-
-    //   if (diff < timeGap) {
-    //     alert("⏳ Please wait at least 5 minutes!");
-    //     return;
-    //   }
-    // }
 
     const updatePerson = {
       ...person,
       last_contact_time: date.toLocaleTimeString(),
       last_contact_date: date.toDateString(),
       action: type,
-      // fullTime: date,
     };
+    toast.success(`${type} with ${person.name}`);
     setFriendContact([...friendContact, updatePerson]);
 
     console.log(friendContact);

@@ -12,7 +12,7 @@ const FriendDetails = () => {
   );
 
   return (
-    <div className="flex flex-col md:flex-row gap-4 justify-center items-center my-20">
+    <div className="flex flex-col md:flex-row gap-4 justify-center items-center my-30">
       <LeftCard expectedFriend={expectedFriend} />
       <RightCard expectedFriend={expectedFriend} />
     </div>
