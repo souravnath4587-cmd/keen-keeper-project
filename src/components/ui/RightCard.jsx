@@ -38,27 +38,27 @@ const RightCard = ({ expectedFriend }) => {
       <div className="rounded-2xl shadow p-4">
         <h4 className="text-xl text-[#244d3f] my-4">Quick Check In</h4>
         <div className="flex flex-row justify-between items-center gap-2">
-          <div
+          <button
             onClick={() => handleAction(expectedFriend, "call")}
             className="bg-[#f5f3f7] rounded-xl px-12 py-6 flex flex-col items-center space-y-2"
           >
             <BsFillTelephoneFill size={25} />
             <p className="text-[#64748b]">Call</p>
-          </div>
-          <div
+          </button>
+          <button
             onClick={() => handleAction(expectedFriend, "text")}
             className="bg-[#f5f3f7] rounded-xl px-12 py-6 flex flex-col items-center space-y-2"
           >
             <IoMdText size={25} />
             <p className="text-[#64748b]">Text</p>
-          </div>
-          <div
+          </button>
+          <button
             onClick={() => handleAction(expectedFriend, "video")}
             className="bg-[#f5f3f7] rounded-xl px-12 py-6  flex flex-col items-center space-y-2"
           >
             <FaVideo size={25} />
             <p className="text-[#64748b]">Video</p>
-          </div>
+          </button>
         </div>
       </div>
     </div>

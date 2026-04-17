@@ -1,9 +1,8 @@
-import React, { use } from "react";
+import React from "react";
 import Friend from "../ui/Friend";
-const friendsData = fetch("/friends.json").then((res) => res.json());
 
-const Friends = () => {
-  const friends = use(friendsData);
+const Friends = ({ friends }) => {
+  console.log(friends);
 
   return (
     <div>

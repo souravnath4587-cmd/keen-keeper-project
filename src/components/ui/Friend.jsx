@@ -21,7 +21,11 @@ const Friend = ({ friend }) => {
                 </p>
               ))}
             </div>
-            <div className="badge badge-success my-2">{status}</div>
+            <div
+              className={`badge ${(status == "almost due" && "badge-secondary") || (status === "on-track" && "badge-warning") || (status === "overdue" && "badge-success")} my-2`}
+            >
+              {status}
+            </div>
           </div>
         </div>
       </div>

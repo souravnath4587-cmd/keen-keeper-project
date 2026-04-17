@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { FriendContactContext } from "../context/FriendContactProvider";
 
 const DropDown = () => {
+  const { setFilterActive } = useContext(FriendContactContext);
+
   return (
     <div>
       <div className="dropdown dropdown-bottom">
@@ -11,13 +14,16 @@ const DropDown = () => {
           tabIndex="-1"
           className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm"
         >
-          <li>
+          <li onClick={() => setFilterActive("all")}>
+            <a>all</a>
+          </li>
+          <li onClick={() => setFilterActive("call")}>
             <a>Call</a>
           </li>
-          <li>
+          <li onClick={() => setFilterActive("text")}>
             <a>Text</a>
           </li>
-          <li>
+          <li onClick={() => setFilterActive("video")}>
             <a>Video</a>
           </li>
         </ul>

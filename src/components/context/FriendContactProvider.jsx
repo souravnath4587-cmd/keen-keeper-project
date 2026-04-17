@@ -4,9 +4,15 @@ export const FriendContactContext = createContext();
 
 const FriendContactProvider = ({ children }) => {
   const [friendContact, setFriendContact] = useState([]);
-  // const [friendTextContact, setFriendTextContact] = useState([]);
-  // const [friendVideoContact, setFriendVideoContact] = useState([]);
-  const timeGap = 5 * 60 * 1000; // 5 minutes
+  const [filterActive, setFilterActive] = useState("all");
+
+  const filterList =
+    filterActive === "all"
+      ? friendContact
+      : friendContact.filter((item) => item.action === filterActive);
+
+  // const timeGap = 5 * 60 * 1000; // 5 minutes
+
   const handleAction = (person, type) => {
     const date = new Date();
     // const lastAction = friendContact.find((item) => item.id === person.id);
@@ -39,6 +45,9 @@ const FriendContactProvider = ({ children }) => {
     handleAction,
     friendContact,
     setFriendContact,
+    filterList,
+    filterActive,
+    setFilterActive,
   };
   return (
     <FriendContactContext.Provider value={data}>
